@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { Montserrat as FontSans } from "next/font/google"
+import { Montserrat as FontSans } from "next/font/google";
 
-import { cn } from "@app/lib/utils"
+import { cn } from "@app/lib/utils";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,14 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <body
+      <body
         className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
         )}
-    >
+      >
         {children}
-    </body>
+      </body>
     </html>
   );
 }
