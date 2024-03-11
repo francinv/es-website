@@ -9,10 +9,9 @@ export default {
       type: 'string',
     },
     {
-      name: 'images',
-      title: 'Images',
-      type: 'array',
-      of: [{type: 'image'}],
+      name: 'image',
+      title: 'Image',
+      type: 'image',
     },
     {
       name: 'contentp1',

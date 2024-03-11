@@ -14,10 +14,9 @@ export default {
       type: 'url',
     },
     {
-      name: 'cernImages',
-      title: 'CERN Images',
-      type: 'array',
-      of: [{type: 'image'}],
+      name: 'cernImage',
+      title: 'CERN Image',
+      type: 'image',
     },
     {
       name: 'cernContent',
@@ -26,10 +25,9 @@ export default {
       of: [{type: 'block'}],
     },
     {
-      name: 'bostonImages',
-      title: 'Boston Images',
-      type: 'array',
-      of: [{type: 'image'}],
+      name: 'bostonImage',
+      title: 'Boston Image',
+      type: 'image',
     },
     {
       name: 'bostonContent',

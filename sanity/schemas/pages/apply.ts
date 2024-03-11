@@ -9,10 +9,9 @@ export default {
       type: 'string',
     },
     {
-      name: 'images',
-      title: 'Images',
-      type: 'array',
-      of: [{type: 'image'}],
+      name: 'image',
+      title: 'Image',
+      type: 'image',
     },
     {
       name: 'content',
@@ -25,6 +24,17 @@ export default {
       title: 'Upcoming information',
       type: 'array',
       of: [{type: 'info'}],
+    },
+    {
+      name: 'video',
+        title: 'Video URL',
+        type: 'url',
+
+    },
+    {
+      name: 'video_mobile',
+        title: 'Video URL (Mobile)',
+        type: 'url',
     }
   ],
 }

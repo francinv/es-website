@@ -9,10 +9,9 @@ export default {
       type: 'url',
     },
     {
-      name: 'images',
-      title: 'Images',
-      type: 'array',
-      of: [{type: 'image'}],
+      name: 'image',
+      title: 'Image',
+      type: 'image',
     },
     {
       name: 'content',
@@ -20,10 +19,5 @@ export default {
       type: 'array',
       of: [{type: 'block'}],
     },
-    {
-      name: 'quote',
-      title: 'Quote',
-      type: 'quote',
-    }
   ],
 }

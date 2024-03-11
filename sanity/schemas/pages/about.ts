@@ -14,10 +14,9 @@ export default {
       type: 'text',
     },
     {
-      name: 'images',
-      title: 'Images',
-      type: 'array',
-      of: [{type: 'image'}],
+      name: 'image',
+      title: 'Image',
+      type: 'image',
     },
     {
       name: 'quote',
@@ -25,10 +24,10 @@ export default {
       type: 'quote',
     },
     {
-      name: 'paragraphs_p1',
-      title: 'Paragraphs - Part 1',
+      name: 'content_p1',
+      title: 'Sections - Part 1',
       type: 'array',
-      of: [{type: 'text'}],
+      of: [{type: 'block'}],
     },
     {
       name: 'video',
@@ -36,10 +35,10 @@ export default {
       type: 'url',
     },
     {
-      name: 'paragraphs_p2',
-      title: 'Paragraphs - Part 2',
+      name: 'content_p2',
+      title: 'Sections - Part 2',
       type: 'array',
-      of: [{type: 'text'}],
-    }
+      of: [{type: 'block'}],
+    },
   ]
 }
