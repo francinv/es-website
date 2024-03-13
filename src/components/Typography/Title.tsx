@@ -1,12 +1,12 @@
-import React, { ReactNode } from "react";
+import React from "react";
+import { TypographyProps } from "@app/types";
 
-interface TitleProps {
-  children: ReactNode;
-  className?: string;
-}
-
-const Title = ({ children, className }: TitleProps) => {
-  return <h1 className={`text-4xl font-semibold ${className}`}>{children}</h1>;
+const Title = ({ children, className }: TypographyProps) => {
+  return (
+    <h1 className={`text-2xl md:text-4xl font-semibold ${className}`}>
+      {children}
+    </h1>
+  );
 };
 
-export default Title;
+export { Title };
