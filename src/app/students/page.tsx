@@ -67,7 +67,7 @@ export default function Students() {
         </div>
       </section>
       <section className="flex my-2 md:my-8 justify-center">
-        <div className="w-11/12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        <div className="w-11/12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
           {students.map((student) => (
             <StudentDialog student={student} key={student.name} />
           ))}

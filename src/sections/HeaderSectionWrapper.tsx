@@ -4,7 +4,7 @@ export interface WrapperProps {
 
 const HeaderSectionWrapper = ({ children }: WrapperProps) => {
   return (
-    <section className="py-6 sm:flex sm:flex-col md:flex-row sm:items-center sm:justify-center md:justify-between">
+    <section className="py-6 flex flex-col md:flex-row items-center justify-center md:justify-between">
       {children}
     </section>
   );

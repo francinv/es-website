@@ -4,7 +4,7 @@ import { H2, SanityBlock, Title } from "@app/components";
 import { HeaderSectionAbout } from "@app/sections";
 
 async function getData() {
-  const query = `*[ _type == 'about' ]`;
+  const query = `*[ _type == "about" ]`;
   return client.fetch(query).then((res: AboutPage[]) => res[0]);
 }
 

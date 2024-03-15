@@ -25,21 +25,20 @@ const getFirstName = (name: string) => {
 
 const StartupCard = (student: Student) => {
   const isMobile = useMediaQuery("(max-width: 640px)");
-  const height = isMobile ? 125 : 300;
 
   return (
-    <>
+    <div>
       <Image
         src={urlForImage(student.image)}
         alt={student.name}
-        width={isMobile ? 175 : 250}
-        height={295}
-        className={`rounded-t-2xl h-[${height}px]`}
+        width={isMobile ? 125 : 175}
+        height={225}
+        className={`min-h-[100px] md:min-h-[225px]`}
       />
       <H6 className="font-medium group-hover:bg-accent group-hover:text-background text-center duration-300 w-full">
         {getFirstName(student.name)}
       </H6>
-    </>
+    </div>
   );
 };
 

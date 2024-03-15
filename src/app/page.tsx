@@ -16,7 +16,7 @@ import { IconExternalLink } from "@tabler/icons-react";
 import Link from "next/link";
 
 async function getHomeData() {
-  const query = `*[ _type == 'home' ]{...}`;
+  const query = `*[ _type == "home" ]`;
   return client.fetch(query).then((res: HomePage[]) => res[0]);
 }
 

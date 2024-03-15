@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { H1 } from "@app/components";
+import { H1, H2, H3 } from "@app/components";
 import Link from "next/link";
 import { IconMail, IconPhone } from "@tabler/icons-react";
 
@@ -19,17 +19,17 @@ const ContactCard = ({
   phone,
 }: ContactCardProps) => {
   return (
-    <div className="rounded-lg relative bg-card p-8">
+    <div className="rounded-lg relative bg-card p-4">
       <div className="flex flex-row items-center justify-start">
         <Image
           src={imageUri}
           alt={`Picture of: ${name}`}
           width={100}
           height={125}
-          className="rounded-full"
+          className="h-[135px]"
         />
         <div className="flex flex-col items-start justify-center ml-4">
-          <H1 className="text-card-foreground">{name}</H1>
+          <H1 className="text-card-foreground text-lg md:text-xl">{name}</H1>
           <p className="text-card-foreground">{position}</p>
         </div>
       </div>
