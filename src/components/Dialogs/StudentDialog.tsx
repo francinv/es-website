@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import { IconBrandLinkedin } from "@tabler/icons-react";
 import { ScrollArea } from "@app/components/Dialogs/ScrollArea";
+import { splitTextIntoParagraphs } from "@app/util";
 
 interface StudentDialogProps {
   student: Student;
@@ -90,7 +91,13 @@ const StudentDialog = ({ student }: StudentDialogProps) => {
         </DialogHeader>
         <div className="text-black flex flex-col justify-center">
           <ScrollArea className="max-h-[200px] md:max-h-[600px]">
-            <p>{student.description}</p>
+            {splitTextIntoParagraphs(student.description, 500).map(
+              (paragraph, index) => (
+                <p key={index} className="mb-2">
+                  {paragraph}
+                </p>
+              ),
+            )}
           </ScrollArea>
         </div>
       </DialogContent>
