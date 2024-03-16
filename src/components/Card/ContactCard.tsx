@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { H1, H2, H3 } from "@app/components";
+import { H1 } from "@app/components";
 import Link from "next/link";
 import { IconMail, IconPhone } from "@tabler/icons-react";
 
