@@ -12,15 +12,12 @@ import { Startup } from "@app/types";
 import { Avatar, AvatarImage } from "@app/components/Avatar";
 import { IconBrandLinkedin, IconMail, IconWorldWww } from "@tabler/icons-react";
 import Link from "next/link";
-import { useMediaQuery } from "@app/hooks";
 
 interface StartupDialogProps {
   startup: Startup;
 }
 
 const StartupCard = (startup: Startup) => {
-  const isMobile = useMediaQuery("(max-width: 640px)");
-
   return (
     <>
       <Image
@@ -28,7 +25,7 @@ const StartupCard = (startup: Startup) => {
         alt={startup.name}
         width={250}
         height={250}
-        className={`rounded-t-2xl min-h-[${isMobile ? 150 : 250}px]`}
+        className={`min-h-[150px] md:min-h-[250px]`}
       />
       <H6 className="mt-1 font-medium group-hover:bg-accent group-hover:text-background w-full text-center duration-300 group-hover:mt-0 transition-all">
         {startup.name}

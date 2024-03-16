@@ -139,3 +139,13 @@ export interface Student {
   image: Image;
   year: number;
 }
+
+export interface IdeaPage extends SanityMeta {
+  title: string;
+  image: Image;
+  contentp1: Block[];
+  video: string;
+  commercializations: string[];
+  contentp2: Block[];
+  contact: ContactPerson;
+}

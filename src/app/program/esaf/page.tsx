@@ -3,7 +3,7 @@ import { AlumniOrganizationPage } from "@app/types";
 import { AlumniSection } from "@app/sections";
 
 async function getData() {
-  const query = `*[ _type == 'alumni' ]`;
+  const query = `*[ _type == "alumni" ]`;
   return client.fetch<AlumniOrganizationPage[]>(query).then((res) => res[0]);
 }
 
