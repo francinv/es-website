@@ -21,7 +21,7 @@ async function getHomeData() {
 }
 
 async function getNotifications() {
-  const query = `*[ _type == "notifications" ]`;
+  const query = `*[ _type == 'notifications' ]`;
   return client.fetch<Notification[]>(query).then((res) => res);
 }
 

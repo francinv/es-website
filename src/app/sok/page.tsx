@@ -13,7 +13,7 @@ import { IconExternalLink } from "@tabler/icons-react";
 import Link from "next/link";
 
 async function getData() {
-  const query = `*[_type == "apply"]`;
+  const query = `*[_type == 'apply']`;
 
   return client.fetch<ApplyPage[]>(query).then((res) => res[0]);
 }

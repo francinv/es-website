@@ -5,6 +5,7 @@ import { Montserrat as FontSans } from "next/font/google";
 
 import { cn } from "@app/lib";
 import { Footer, Header } from "@app/components";
+import { Analytics } from "@vercel/analytics/react";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
