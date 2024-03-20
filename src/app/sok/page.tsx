@@ -39,10 +39,10 @@ export default async function Apply() {
       </section>
       <section className="my-4 flex flex-col items-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-10/12 md:w-3/5">
-          {content.information.map((info, index) => (
+          {content.information.map((info, index, array) => (
             <Card
               key={index}
-              className="bg-accent text-accent-foreground relative"
+              className={`bg-accent text-accent-foreground relative ${array.length > 1 ? "" : "col-span-2"}`}
               style={{
                 paddingBottom: info.link ? "2rem" : 0,
               }}

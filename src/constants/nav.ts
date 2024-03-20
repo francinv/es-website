@@ -12,3 +12,17 @@ export const PROGRAM_LINKS = [
     link: "/program/faculty",
   },
 ];
+
+export const paths = [
+  "/",
+  "/about",
+  "/contact",
+  "/idea",
+  "/program",
+  "/program/cern-and-boston",
+  "/program/esaf",
+  "/program/faculty",
+  "/sok",
+  "/startup",
+  "/students",
+];
