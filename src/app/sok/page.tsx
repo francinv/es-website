@@ -24,12 +24,25 @@ export default async function Apply() {
   return (
     <main className="flex min-h-screen flex-col">
       <HeaderSectionApply title={content.title} image={content.image} />
+      <section className="my-4 flex flex-col items-center md:hidden ">
+        <video controls className="w-4/5">
+          <source src={content.video_mobile} type="video/mp4" />
+        </video>
+      </section>
+      <section className="my-4 flex flex-col items-center">
+        <div className="w-4/5 md:w-3/5">
+          <SanityBlock blocks={content.content} />
+        </div>
+      </section>
+      <section className="my-4 flex flex-col items-center">
+        <SocialSectionApply />
+      </section>
       <section className="my-4 flex flex-col items-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-10/12 md:w-3/5">
-          {content.information.map((info, index) => (
+          {content.information.map((info, index, array) => (
             <Card
               key={index}
-              className="bg-accent text-accent-foreground relative"
+              className={`bg-accent text-accent-foreground relative ${array.length > 1 ? "" : "col-span-2"}`}
               style={{
                 paddingBottom: info.link ? "2rem" : 0,
               }}
@@ -73,19 +86,6 @@ export default async function Apply() {
             </Card>
           ))}
         </div>
-      </section>
-      <section className="my-4 flex flex-col items-center md:hidden ">
-        <video controls className="w-4/5">
-          <source src={content.video_mobile} type="video/mp4" />
-        </video>
-      </section>
-      <section className="my-4 flex flex-col items-center">
-        <div className="w-4/5 md:w-3/5">
-          <SanityBlock blocks={content.content} />
-        </div>
-      </section>
-      <section className="my-4 flex flex-col items-center">
-        <SocialSectionApply />
       </section>
     </main>
   );
