@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useMediaQuery } from "@app/hooks";
 import { HomePage } from "@app/types";
 import { HeaderSectionWrapper } from "@app/sections";
+import { useRef } from "react";
 
 interface HeaderSectionHomeProps {
   title: HomePage["title"];
@@ -20,29 +21,25 @@ const HeaderSectionHome = ({
   description,
 }: HeaderSectionHomeProps) => {
   const isMobile = useMediaQuery("(max-width: 640px)");
+  const imageRef = useRef<HTMLImageElement>(null);
+
   return (
-    <HeaderSectionWrapper>
+    <HeaderSectionWrapper minHeight={imageRef?.current?.height}>
       {!isMobile && (
         <Image
           src={urlForImage(image)}
           alt={"Picture for home page"}
-          width={350}
+          width={300}
           height={200}
+          className={"absolute left-0 top-0"}
+          ref={imageRef}
         />
       )}
-      <div className="w-full flex flex-col justify-center items-center">
+      <div className="w-4/5 md:w-3/5 z-10 flex flex-col justify-center items-center mx-auto">
         <Title className={"text-secondary text-center md:text-left"}>
           {title}
         </Title>
-        <div className="flex flex-row md:flex-col justify-between items-center w-full">
-          {isMobile && (
-            <Image
-              src={urlForImage(image)}
-              alt={"Picture for apply page"}
-              width={200}
-              height={150}
-            />
-          )}
+        <div className="flex flex-row md:flex-col justify-center md:justify-between mt-2 md:mt-0 items-center w-full">
           <H2 className="mt-2 w-3/5 text-center hidden md:block">
             {description}
           </H2>

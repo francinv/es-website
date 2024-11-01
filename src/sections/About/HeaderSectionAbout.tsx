@@ -7,6 +7,7 @@ import { urlForImage } from "@app/config";
 import { AboutPage } from "@app/types";
 import { useMediaQuery } from "@app/hooks";
 import { HeaderSectionWrapper } from "@app/sections";
+import { useRef } from "react";
 
 interface HeaderSectionAboutProps {
   title: AboutPage["title"];
@@ -20,10 +21,11 @@ const HeaderSectionAbout = ({
   description,
 }: HeaderSectionAboutProps) => {
   const isMobile = useMediaQuery("(max-width: 640px)");
+  const imageRef = useRef<HTMLImageElement>(null);
 
   return (
-    <HeaderSectionWrapper>
-      <div className="w-full flex flex-col justify-center items-center">
+    <HeaderSectionWrapper minHeight={imageRef?.current?.height}>
+      <div className="w-4/5 md:w-3/5 z-10 flex flex-col justify-center items-center mx-auto">
         <Title className={"text-secondary text-center md:text-left"}>
           {title}
         </Title>
@@ -39,23 +41,16 @@ const HeaderSectionAbout = ({
           >
             <Link href={"/sok"}>How to apply</Link>
           </Button>
-          {isMobile && (
-            <Image
-              src={urlForImage(image)}
-              alt={"Picture for about page"}
-              width={200}
-              height={150}
-              className="ml-auto"
-            />
-          )}
         </div>
       </div>
       {!isMobile && (
         <Image
           src={urlForImage(image)}
           alt={"Picture for about page"}
-          width={350}
-          height={150}
+          width={300}
+          height={200}
+          className={"absolute right-0 top-0"}
+          ref={imageRef}
         />
       )}
     </HeaderSectionWrapper>

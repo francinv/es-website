@@ -19,7 +19,7 @@ const config = {
       },
     },
     colors: {
-      background: "#FFE8D1",
+      background: "#FFFFFF",
     },
     extend: {
       colors: {
@@ -81,6 +81,9 @@ const config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
+      spacing: {
+        "300": "300px",
       },
     },
   },
