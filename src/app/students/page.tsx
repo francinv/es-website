@@ -18,7 +18,7 @@ import { StudentDialog } from "@app/components/Dialogs/StudentDialog";
 export default function Students() {
   const { currentValue: currentView, onChange } = useSelect("current");
   const { currentValue: currentYear, onChange: onYearChange } =
-    useSelect("2025");
+    useSelect("2026");
   const { students } = useStudents(currentView, currentYear);
 
   const isCurrent = currentView === "current";

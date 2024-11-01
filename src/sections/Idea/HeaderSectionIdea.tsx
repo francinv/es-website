@@ -7,6 +7,7 @@ import { H2, Title } from "@app/components";
 import { useMediaQuery } from "@app/hooks";
 import { IdeaPage } from "@app/types";
 import Link from "next/link";
+import { useRef } from "react";
 
 interface HeaderSectionIdeaProps {
   title: IdeaPage["title"];
@@ -15,37 +16,23 @@ interface HeaderSectionIdeaProps {
 
 const HeaderSectionIdea = ({ title, image }: HeaderSectionIdeaProps) => {
   const isMobile = useMediaQuery("(max-width: 640px)");
+  const imageRef = useRef<HTMLImageElement>(null);
 
   return (
-    <HeaderSectionWrapper>
+    <HeaderSectionWrapper minHeight={imageRef?.current?.height}>
       {!isMobile && (
         <Image
           src={urlForImage(image)}
-          alt={"Picture for apply page"}
-          width={350}
+          alt={"Picture for idea page"}
+          width={300}
           height={200}
+          className={"absolute left-0 top-0"}
+          ref={imageRef}
         />
       )}
-      {!isMobile && (
-        <Title className={"text-secondary text-center md:text-left"}>
-          {title}
-        </Title>
-      )}
-      <div className="flex flex-col md:flex-row mt-4 md:mt-0">
-        {isMobile && (
-          <div className="flex flex-row justify-between items-center mb-4">
-            <Image
-              src={urlForImage(image)}
-              alt={"Picture for apply page"}
-              width={200}
-              height={150}
-            />
-            <Title className={"text-secondary text-center md:text-left flex-1"}>
-              {title}
-            </Title>
-          </div>
-        )}
-        <div className="px-6 py-4 bg-tertiary rounded-xl text-tertiary-foreground w-4/5 md:w-[350px] mr-auto md:mr-6 ml-auto md:ml-0">
+      <div className="w-4/5 md:w-3/5 z-10 flex flex-col justify-center items-center mx-auto">
+        <Title className={"text-secondary text-center"}>{title}</Title>
+        <div className="px-6 py-4 bg-tertiary rounded-xl text-tertiary-foreground w-full md:4/5 mt-2">
           <H2 className="text-center">Our values</H2>
           <ol className="ml-6 mt-2 space-y-1 list-decimal">
             <li>
